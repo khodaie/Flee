@@ -6,6 +6,12 @@
     <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>flee.pfx</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
+    <Version>1.2.3-paya2</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Flee</PackageId>
+    <Product>Flee</Product>
+    <Company>Flee</Company>
+    <Authors>Flee</Authors>
   </PropertyGroup>
 
   <ItemGroup>

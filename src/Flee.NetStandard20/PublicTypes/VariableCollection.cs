@@ -34,7 +34,7 @@ namespace Flee.PublicTypes
 
         private void HookOptions()
         {
-            _myContext.Options.CaseSensitiveChanged += OnOptionsCaseSensitiveChanged;
+            //_myContext.Options.CaseSensitiveChanged += OnOptionsCaseSensitiveChanged;
         }
 
         private void CreateDictionary()
@@ -42,15 +42,15 @@ namespace Flee.PublicTypes
             _myVariables = new Dictionary<string, IVariable>(_myContext.Options.StringComparer);
         }
 
-        private void OnOptionsCaseSensitiveChanged(object sender, EventArgs e)
-        {
-            this.CreateDictionary();
-        }
+        //private void OnOptionsCaseSensitiveChanged(object sender, EventArgs e)
+        //{
+        //    this.CreateDictionary();
+        //}
 
         internal void Copy(VariableCollection dest)
         {
             dest.CreateDictionary();
-            dest.HookOptions();
+            //dest.HookOptions();
 
             foreach (KeyValuePair<string, IVariable> pair in _myVariables)
             {
