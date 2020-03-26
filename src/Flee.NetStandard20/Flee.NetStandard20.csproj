@@ -6,7 +6,7 @@
     <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>flee.pfx</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
-    <Version>1.2.3-paya3</Version>
+    <Version>1.2.3-paya4</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Flee</PackageId>
     <Product>Flee</Product>
