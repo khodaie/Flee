@@ -60,7 +60,7 @@ namespace Flee.ExpressionElements.MemberElements
         private bool FindIndexer(Type targetType)
         {
             // Get the default members
-            MemberInfo[] members = targetType.GetDefaultMembers();
+            var members = targetType.GetAllDefaultMembers();
 
             List<MethodInfo> methods = new List<MethodInfo>();
 

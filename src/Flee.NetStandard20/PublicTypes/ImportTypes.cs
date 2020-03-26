@@ -150,7 +150,7 @@ namespace Flee.PublicTypes
 
         protected override void AddMembers(string memberName, MemberTypes memberType, ICollection<MemberInfo> dest)
         {
-            MemberInfo[] members = _myType.FindMembers(memberType, _myBindFlags, this.Context.Options.MemberFilter, memberName);
+            var members = _myType.FindAllMembers(memberType, _myBindFlags, this.Context.Options.MemberFilter, memberName);
             ImportBase.AddMemberRange(members, dest);
         }
 
@@ -158,7 +158,7 @@ namespace Flee.PublicTypes
         {
             if (_myUseTypeNameAsNamespace == false)
             {
-                MemberInfo[] members = _myType.FindMembers(memberType, _myBindFlags, this.AlwaysMemberFilter, null);
+                var members = _myType.FindAllMembers(memberType, _myBindFlags, this.AlwaysMemberFilter, null);
                 ImportBase.AddMemberRange(members, dest);
             }
         }
