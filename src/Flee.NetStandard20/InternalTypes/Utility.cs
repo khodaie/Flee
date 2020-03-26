@@ -7,13 +7,9 @@ using Flee.Resources;
 
 namespace Flee.InternalTypes
 {
-    [Obsolete("Holds various shared utility methods")]
-    internal class Utility
+    //[Obsolete("Holds various shared utility methods")]
+    internal static class Utility
     {
-        private Utility()
-        {
-        }
-
         public static void AssertNotNull(object o, string paramName)
         {
             if (o == null)

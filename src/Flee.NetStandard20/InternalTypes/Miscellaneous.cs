@@ -161,7 +161,7 @@ namespace Flee.InternalTypes
         public static object Instance => OurInstance;
     }
 
-    [Obsolete("Helper class to resolve overloads")]
+    //[Obsolete("Helper class to resolve overloads")]
     internal class CustomMethodInfo : IComparable<CustomMethodInfo>, IEquatable<CustomMethodInfo>
     {
         /// <summary>

@@ -13,7 +13,7 @@ using Flee.Resources;
 
 namespace Flee.ExpressionElements.MemberElements
 {
-    [Obsolete("Represents a function call")]
+    //[Obsolete("Represents a function call")]
     internal class FunctionCallElement : MemberElement
     {
         private readonly ArgumentList _myArguments;
@@ -52,7 +52,7 @@ namespace Flee.ExpressionElements.MemberElements
 
             if (methods.Count > 0)
             {
-                // More than one method exists with this name			
+                // More than one method exists with this name
                 this.BindToMethod(methods, MyPrevious, argTypes);
                 return;
             }
@@ -385,7 +385,7 @@ namespace Flee.ExpressionElements.MemberElements
 
         /// <summary>
         /// The method info we will be calling
-        /// </summary>	
+        /// </summary>
         private MethodInfo Method => _myTargetMethodInfo.Target;
 
         public override Type ResultType

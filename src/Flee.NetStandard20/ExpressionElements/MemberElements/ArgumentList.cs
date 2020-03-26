@@ -7,7 +7,7 @@ using Flee.InternalTypes;
 
 namespace Flee.ExpressionElements.MemberElements
 {
-    [Obsolete("Encapsulates an argument list")]
+    //[Obsolete("Encapsulates an argument list")]
     internal class ArgumentList
     {
         private readonly IList<ExpressionElement> _myElements;
