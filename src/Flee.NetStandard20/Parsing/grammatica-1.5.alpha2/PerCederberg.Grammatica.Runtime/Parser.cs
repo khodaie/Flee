@@ -8,7 +8,7 @@ using System.Text;
 namespace Flee.Parsing.grammatica_1._5.alpha2.PerCederberg.Grammatica.Runtime
 {
 
-    [Obsolete(" A base parser class. This class provides the standard parser interface, as well as token handling.")]
+    //[Obsolete(" A base parser class. This class provides the standard parser interface, as well as token handling.")]
     internal abstract class Parser
     {
         private bool _initialized;
@@ -143,7 +143,7 @@ namespace Flee.Parsing.grammatica_1._5.alpha2.PerCederberg.Grammatica.Runtime
             }
         }
 
-        
+
         private void CheckElement(string name,
                                   ProductionPatternElement elem)
         {

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using Flee.Resources;
@@ -10,6 +12,29 @@ namespace Flee.InternalTypes
     //[Obsolete("Holds various shared utility methods")]
     internal static class Utility
     {
+        internal static IList<MemberInfo> FindAllMembers(this Type type, MemberTypes memberType, BindingFlags bindingAttr, MemberFilter filter, object filterCriteria)
+        {
+            IList<MemberInfo> types = type.FindMembers(memberType, bindingAttr, filter, filterCriteria);
+
+            if (type.IsInterface)
+            {
+                var baseInterfaceTypes = type.GetInterfaces();
+                if (baseInterfaceTypes.Length > 0)
+                {
+                    var listTypes = types.ToList();
+
+                    foreach (var baseInterfaceType in baseInterfaceTypes)
+                    {
+                        listTypes.AddRange(baseInterfaceType.FindMembers(memberType, bindingAttr, filter, filterCriteria));
+                    }
+
+                    types = listTypes;
+                }
+            }
+
+            return types;
+        }
+
         public static void AssertNotNull(object o, string paramName)
         {
             if (o == null)

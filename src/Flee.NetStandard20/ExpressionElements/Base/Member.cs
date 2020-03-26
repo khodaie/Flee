@@ -300,14 +300,14 @@ namespace Flee.ExpressionElements.Base
             {
                 // We are not the first element; find all members with our name on the type of the previous member
                 // We are not the first element; find all members with our name on the type of the previous member
-                var foundMembers = MyPrevious.TargetType.FindMembers(targets, BindFlags, MyOptions.MemberFilter, MyName);
+                var foundMembers = MyPrevious.TargetType.FindAllMembers(targets, BindFlags, MyOptions.MemberFilter, MyName);
                 var importedMembers = MyContext.Imports.RootImport.FindMembers(MyName, targets);
-                if (foundMembers.Length == 0) //If no members found search in root import
+                if (foundMembers.Count == 0) //If no members found search in root import
                     return importedMembers;
 
-                MemberInfo[] allMembers = new MemberInfo[foundMembers.Length + importedMembers.Length];
+                MemberInfo[] allMembers = new MemberInfo[foundMembers.Count + importedMembers.Length];
                 foundMembers.CopyTo(allMembers, 0);
-                importedMembers.CopyTo(allMembers, foundMembers.Length);
+                importedMembers.CopyTo(allMembers, foundMembers.Count);
                 return allMembers;
             }
         }
